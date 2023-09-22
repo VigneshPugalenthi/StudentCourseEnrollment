@@ -85,19 +85,22 @@ class AVL:
             return 0
         return self.get_height(root.left) - self.get_height(root.right)
 
-    def get_all_course(self, root):
+    def get_all_course(self, root, courses):
         if not root:
             return
-        print(root.course_code)
-        self.get_all_course(root.left)
-        self.get_all_course(root.right)
+        self.get_all_course(root.left, courses)
+        courses.append([root.course_code, root.course_name, root.course_schedule])
+        self.get_all_course(root.right, courses)
+        return courses
 
 
 def main():
     course = AVL()
+    list_courses = []
     head = course.insert_node(None, 'CSC500', 'Research Methods', 'TuTh 16:00-17:15')
     head = course.insert_node(head, 'CSC501', 'Design and Analysis of Algorithm', 'TuTh 14:30-15:45')
     head = course.insert_node(head, 'CSC581', 'Advanced Software Engineering', 'Mo 12:30-2:30')
-    return head
+    head = course.insert_node(head, 'CSC595', 'Special topics in Computer Science', 'TuTh 12:30-14:30')
+    return course.get_all_course(head, list_courses)
 
 
