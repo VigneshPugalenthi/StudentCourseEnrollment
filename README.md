@@ -4,7 +4,7 @@ The objective of this project is to develop a system dedicated to the management
 
 A notable feature of our project is the utilization of Python dictionaries (resembling hashmaps) to efficiently store and manage student data, coupled with the implementation of an AVL tree data structure to organize and maintain course-related information.
 
-Here are the steps to execute the code where user can lo
+Here are the steps to execute the code
 
 `Student Login`
 - User can log in as a student
